@@ -19,3 +19,7 @@ def get_file_lines_as_int(path):
 
 def chunk_list(list, chunk_size):
     return [list[pos:pos + chunk_size] for pos in range(0, len(list))]
+
+
+def split_list(list, chunk_size):
+    return [list[pos:pos + chunk_size] for pos in range(0, len(list), chunk_size)]
