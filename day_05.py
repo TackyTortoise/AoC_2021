@@ -1,6 +1,9 @@
 import utility
 
 
+WITH_DIAGONAL = False
+
+
 class Point:
     def __init__(self, x, y):
         self.x = int(x)
@@ -30,6 +33,8 @@ def get_points_between(point_a, point_b):
         return points
     # Diagonal
     else:
+        if not WITH_DIAGONAL:
+            return []
         x_dir = 1 if point_b.x > point_a.x else -1
         y_dir = 1 if point_b.y > point_a.y else -1
         filled_points = []
@@ -61,6 +66,8 @@ def part1():
 
 
 def part2():
+    global WITH_DIAGONAL
+    WITH_DIAGONAL = True
     part1()
 
 
